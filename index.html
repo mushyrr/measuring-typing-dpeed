@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Measuring typing speed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game">
+    <div class="setting-box">
+      <i class="gear">
+        <img src="icongear.png" alt="">
+      </i>
+      <div class="setcont">
+        <span class="addwords" >Add Words</span>
+      </div>
+      <div class="amend btns" onclick="shwoli(locc)">edit words</div>
+      <div class="local">
+        <ul></ul>
+        <div class="lvls btns" onclick="shwoli(renj)">amend lvl</div>
+        <div class="renj">
+          <form action="">
+            <label for="easy">easy</label>
+            <input id="easy" class="lvl" type="radio" value="easy" name="difficulty">
+            <label for="normal">normal</label>
+            <input id="normal" class="lvl" type="radio" value="normal" name="difficulty" checked>
+            <label for="hard">hard</label>
+            <input id="hard" class="lvl" type="radio" value="hard" name="difficulty">
+          </form>
+          <div class="OK btns" onclick="handleOKClick()" style="background-color: rgb(35, 35, 238);">OK</div>
+        </div>
+        <div class="btns" onclick="shwoli(typingtype)">game type</div>
+        <div class="typingtype">
+          <label for="myword">word</label>
+          <input id="myword" type="radio" value="myword" name="typingtype" >
+          <label for="sentence">sentence</label>
+          <input id="sentence" type="radio" value="sentence" name="typingtype" checked>
+          <div class="OK btns" onclick="handleOKClick2()" style="background-color: rgb(35, 35, 238);">OK</div>
+        </div>
+      </div>
+    </div>
+    <div class="name">Typing Speed Test Game</div>
+    <div class="container">
+      <div class="message">
+        You Are Playing On
+        <span class="lvl"></span> Level
+        & Must write <span class="seconds"></span> words per one minute
+      </div>
+      <div class="start">Start Playing</div>
+      <div class="the-word"></div>
+      <input type="text" class="input" />
+      <div class="upcoming-words">Words Will Show Here</div>
+      <div class="control">
+        <div class="time">Elapsed time: <span></span> Seconds</div>
+        <div class="score">
+          Score: <span class="got">0</span> From <span class="total"></span>
+        </div>
+      </div>
+      <div class="speed"> </div>
+      <div class="finish"></div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
