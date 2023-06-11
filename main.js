@@ -16,6 +16,11 @@
   let mywps ;
   
 
+  const keySound = document.getElementById('keySound');
+
+  const keySoundbad = document.getElementById('keySoundbad');
+
+
 
 
 
@@ -33,17 +38,22 @@ input.addEventListener('input', () => {
     // Check if the character matches the corresponding character in the current word
     if (typedValue && currentWorda && typedValue[i].toLowerCase() === currentWorda[i].toLowerCase()) {
       // Highlight the correct character
+      
+document.addEventListener('keypress', () => {
+  keySound.play();
+});
       theWord.innerHTML = `<span class="highlight">${currentWorda.slice(0, i + 1)}</span>${currentWorda.slice(i + 1)}`;
       correctIndex = i;
-    } else {
+    } else if(typedValue && currentWorda && typedValue[i].toLowerCase() !== currentWorda[i].toLowerCase()) {
+      keySoundbad.play();
+      
+      theWord.innerHTML = `<span class="reed">${currentWorda.slice(0, i + 1)}</span>${currentWorda.slice(i + 1)}`;
+      correctIndex = i;
       // If the character doesn't match, break the loop
       break;
     }
   }
 
-  // Remove the highlighting from the characters after the last correct index
-  const remainingWord = currentWorda.slice(correctIndex + 1);
-  theWord.innerHTML = `<span class="highlight">${currentWorda.slice(0, correctIndex + 1)}</span>${remainingWord}`;
 });
 
 

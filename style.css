@@ -317,7 +317,9 @@
 .highlight {
   color: var(--main-color);
 }
-
+.reed{
+  color: red;
+}
 .not-word{
   text-align: center;
   font-size: x-large;
